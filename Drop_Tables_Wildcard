@@ -1,0 +1,12 @@
+SET *table* = NULL;
+SELECT GROUP_CONCAT(table_schema, '.`', table_name, '`') INTO *table* FROM
+(select * from
+information_schema.tables
+  WHERE table_schema != '_**VALUE**_' and table_schema != '_**VALUE**_' AND table_name LIKE '_**%VALUE**_'
+  LIMIT 150) TT;
+
+SET *table* = CONCAT('DROP TABLE ', *table*);
+select *table*;
+PREPARE stmt1 FROM *table*;
+EXECUTE stmt1;
+DEALLOCATE PREPARE stmt1;
