@@ -1,0 +1,20 @@
+INSERT INTO *Schema.Table1*
+(
+    Table1Var1,
+    Table1Var2
+    Table1Var3
+    Table1Var4
+) SELECT
+    Table2Var1,
+    Table2Var2,
+    Table2Var3,
+    Table2Var4
+
+FROM
+*Schema.Table2* t
+WHERE
+(
+t.Var1 ='???'
+OR t.Var1 ='???'
+OR t.Var1 ='???'
+);
