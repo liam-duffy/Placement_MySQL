@@ -1,0 +1,14 @@
+/*Selecting all tables */
+select table_schema as database_name,table_name
+from information_schema.tables
+
+/* Conditioning wildcard (excluding values included) */
+where table_name NOT LIKE '%20%' AND table_name NOT LIKE '%21%' AND table_name NOT LIKE '%22%' 
+	AND table_name LIKE '%_09' Or table_name LIKE '%09_%' AND table_type = 'BASE TABLE'
+    
+    /* Excluding Databases that should not be touched */
+    AND table_schema not in ('information_schema','mysql',
+                             'performance_schema','sys')
+
+/* Database name alphabetical order */
+order by database_name, table_name;
