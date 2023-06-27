@@ -1,0 +1,12 @@
+CREATE TABLE `???` (
+  `id` int(5) NOT NULL AUTO_INCREMENT,
+  `Var1` varchar(225),
+  `Var2` varchar(225),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+
+INSERT INTO `???` (Var1, Var2)
+VALUES (Var1, Var2),
+	(Var1, Var2),
+	(Var1, Var2),
+	(Var1, Var2);
